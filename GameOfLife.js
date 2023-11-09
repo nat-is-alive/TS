@@ -1,5 +1,5 @@
 var gridSize = 15;
-var gameCells = [];
+var gameCells = []; // to hold cell states, alive or dead in 2d arr
 // populate all cells dead
 for (var i = 0; i < gridSize; i++) {
     gameCells[i] = [];

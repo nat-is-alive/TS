@@ -1,6 +1,6 @@
 const gridSize: number = 15;
 
-let gameCells: boolean[][] = [];
+let gameCells: boolean[][] = []; // to hold cell states, alive or dead in 2d arr
 
 // populate all cells dead
 
