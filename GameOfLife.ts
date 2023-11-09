@@ -22,6 +22,8 @@ function sleep(delay:number) { // why no sleep function?
     while (new Date().getTime() < start + delay);
 }
 
+// need to add in checks for upper left and right, lower left and right
+
 function checkNeighbours(x: number, y: number) {
   let numberOfNeighbours: number = 0;
 
