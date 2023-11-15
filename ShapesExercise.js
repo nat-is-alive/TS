@@ -89,6 +89,22 @@ var Cube = /** @class */ (function (_super) {
     };
     return Cube;
 }(Square));
+var Tesseract = /** @class */ (function (_super) {
+    __extends(Tesseract, _super);
+    function Tesseract(colour, sideLength) {
+        return _super.call(this, colour, sideLength) || this;
+    }
+    Tesseract.prototype.calculateSurfaceArea = function () {
+        return ((this.sideLength * this.sideLength) * 24);
+    };
+    Tesseract.prototype.calculateSurfaceVolume = function () {
+        return ((this.sideLength * this.sideLength * this.sideLength) * 8); // not sure yet
+    };
+    Tesseract.prototype.calculateHyperVolume = function () {
+        return (this.sideLength * this.sideLength * this.sideLength * this.sideLength); // not sure?
+    };
+    return Tesseract;
+}(Cube));
 var Sphere = /** @class */ (function (_super) {
     __extends(Sphere, _super);
     function Sphere(colour, radius) {
@@ -106,7 +122,9 @@ var natSquare = new Square("Blue", 5);
 var natCube = new Cube("Red", 5);
 var natCircle = new Circle("Green", 5);
 var natSphere = new Sphere("Purple", 5);
+var natTesseract = new Tesseract("Green", 7);
 console.log("Nat's Square is ".concat(natSquare.colour, ", its side length is ").concat(natSquare.sideLength, " therefore its area is ").concat(natSquare.calculateArea(), " and its perimeter is ").concat(natSquare.calculatePerimeter(), "\n"));
 console.log("Nat's Circle is ".concat(natCircle.colour, ", its radius is ").concat(natCircle.radius, " therefore its area is ").concat(natCircle.calculateArea(), " and its circumference is ").concat(natCircle.calculateCircumference(), "\n"));
 console.log("Nat's Cube is ".concat(natCube.colour, ", its side length is ").concat(natCube.sideLength, " therefore its volume is ").concat(natCube.calculateVolume(), " and its surface area is ").concat(natCube.calculateSurfaceArea(), "\n"));
-console.log("Nat's Sphere is ".concat(natSphere.colour, ", its radius is ").concat(natSphere.radius, " therefore its volume is ").concat(natSphere.calculateVolume(), " and its surface area is ").concat(natSphere.calculateSurfaceArea()));
+console.log("Nat's Sphere is ".concat(natSphere.colour, ", its radius is ").concat(natSphere.radius, " therefore its volume is ").concat(natSphere.calculateVolume(), " and its surface area is ").concat(natSphere.calculateSurfaceArea(), "\n"));
+console.log("Nat's Tesseract is ".concat(natTesseract.colour, ", its side length is ").concat(natTesseract.sideLength, " therefore its surface area is ").concat(natTesseract.calculateSurfaceArea(), " its surface volume is ").concat(natTesseract.calculateSurfaceVolume(), " and its hypervolume is ").concat(natTesseract.calculateHyperVolume()));

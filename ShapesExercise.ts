@@ -81,6 +81,26 @@ class Cube extends Square {
 
 }
 
+class Tesseract extends Cube {
+
+  constructor(colour:String, sideLength:number) {
+    super(colour, sideLength);
+  }
+
+  calculateSurfaceArea():number {
+    return ((this.sideLength * this.sideLength) * 24);
+  }
+
+  calculateSurfaceVolume():number {
+    return ((this.sideLength * this.sideLength * this.sideLength) * 8); // not sure yet
+  }
+
+  calculateHyperVolume():number {
+    return (this.sideLength * this.sideLength * this.sideLength * this.sideLength); // not sure?
+  }
+
+}
+
 class Sphere extends Circle {
 
   constructor(colour:String, radius:number) {
@@ -105,10 +125,14 @@ let natCircle = new Circle("Green", 5);
 
 let natSphere = new Sphere("Purple", 5);
 
+let natTesseract = new Tesseract ("Green", 7)
+
 console.log(`Nat's Square is ${natSquare.colour}, its side length is ${natSquare.sideLength} therefore its area is ${natSquare.calculateArea()} and its perimeter is ${natSquare.calculatePerimeter()}\n`);
 
 console.log(`Nat's Circle is ${natCircle.colour}, its radius is ${natCircle.radius} therefore its area is ${natCircle.calculateArea()} and its circumference is ${natCircle.calculateCircumference()}\n`);
 
 console.log(`Nat's Cube is ${natCube.colour}, its side length is ${natCube.sideLength} therefore its volume is ${natCube.calculateVolume()} and its surface area is ${natCube.calculateSurfaceArea()}\n`);
 
-console.log(`Nat's Sphere is ${natSphere.colour}, its radius is ${natSphere.radius} therefore its volume is ${natSphere.calculateVolume()} and its surface area is ${natSphere.calculateSurfaceArea()}`);
+console.log(`Nat's Sphere is ${natSphere.colour}, its radius is ${natSphere.radius} therefore its volume is ${natSphere.calculateVolume()} and its surface area is ${natSphere.calculateSurfaceArea()}\n`);
+
+console.log(`Nat's Tesseract is ${natTesseract.colour}, its side length is ${natTesseract.sideLength} therefore its surface area is ${natTesseract.calculateSurfaceArea()} its surface volume is ${natTesseract.calculateSurfaceVolume()} and its hypervolume is ${natTesseract.calculateHyperVolume()}`);
